@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js">
+        </script>
+    <script>
+        var elWrap = $(".wrap");
+var elMenu = $(".menu");
+var osMenu = elMenu.offset().top;
+var osFoot = $(".foot").offset().top - elMenu.height();
+
+$(window).scroll($.throttle(10, function() {
+
+    elMenu.css("top", 0);
+    var edge = $(window).scrollTop();
+
+    if (osMenu <= edge && osFoot > edge) {
+        elWrap.addClass("dock").removeClass("stop");
+    }
+    else {
+        elWrap.removeClass("dock stop");
+    }
+    if (osFoot <= edge) {
+        elMenu.css("top", osFoot);
+        elWrap.removeClass("dock").addClass("stop");
+    }
+
+}));
+    </script>
+<style>
+
+.section {        
+    background-image: url('images/denim-background.jpg');
+    position:relative;
+    z-index:1;
+    height:500px;
+    width:100%;
+    top:60%;
+    background-attachment:fixed;    /* this keeps the background in place */
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+}
+
+.content {
+    position:relative;
+    left:30%;
+    z-index:2;
+    background-color:#fff;
+    border:2px solid #666;    
+    height:35%;    /* this height difference allows the bg to show through */   
+    width: 30%;
+}
+body { color:#000; text-align:center; font:700 60px/1 'segoe ui', sans-serif; }
+div { width:100%; }
+b { opacity:.2; }
+
+.head { height:250px; line-height:250px; background:#34495e; }
+.menu { height:100px; line-height:100px; background:#1abc9c; }
+.main { height:600px; line-height:600px; background:#ffffff; }
+.foot { height:800px; line-height:800px; background:#34495e; }
+
+/* account for "Menu" being removed from doc flow... */
+.dock .main, .stop .main { padding-top:100px; }
+/* when "Head" is out of view... */
+.dock .menu { z-index:40; position:fixed; }
+/* when "Main" is out of view... */
+.stop .menu { z-index:40; position:absolute; }
+</style>
+</head>
+<body>
+<div class="wrap">
+    <div class="head"><b>Head</b></div>
+    <div class="menu"><b>Menu</b></div>
+    <div class="main"><b>Main</b></div>
+    <div class="foot"><b>Foot</b></div>
+</div>
+<!--<div class="section" id="s1">
+    <div class="content" id="c1">This is some content text for section one</div>
+</div>
+<div class="cont"></div>-->
+</body>
+</html>
+
+http://jsfiddle.net/Marcel/e9hyw/
+http://jsfiddle.net/MFC9B/2/
