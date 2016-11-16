@@ -26,3 +26,74 @@
   color: #fff;
   background-color: #404040;
 }
+#header{
+    height:50%;
+    width:100%;
+}
+#mainContent{
+    height:1000px;
+    width:100%;
+    margin-top:45%;
+}
+.denim{
+    background-image: url("../images/denim-background.jpg");
+    position:absolute;
+    z-index:-1;
+    height:300px;
+    width:100%;
+    background-attachment:fixed;    /* this keeps the background in place */
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+}
+.dp{
+    position:absolute;
+    z-index:2;
+    background-color:#eee;
+    border:2px solid #666;    
+    height:80%;    /* this height difference allows the bg to show through */  
+    width: 20%;
+    text-align: center;
+    top:50%;
+    left:40%;
+    /*background-color: transparent;*/
+}
+
+blockquote {
+font-family: Georgia, serif;
+font-size: 18px;
+font-style: italic;
+width: 500px;
+margin: 0.25em 0;
+padding: 0.35em 40px;
+line-height: 1.45;
+position: relative;
+left:30%;
+color: #383838;
+}
+
+blockquote:before {
+display: block;
+padding-left: 10px;
+content: "\201C";
+font-size: 80px;
+position: absolute;
+left: -20px;
+top: -20px;
+color: #7a7a7a;
+}
+
+blockquote cite {
+color: #999999;
+font-size: 14px;
+display: block;
+margin-top: 5px;
+}
+ 
+blockquote cite:before {
+content: "\2014 \2009";
+}
+
+.subHeading{
+    color: #383838;
+    font-size: 1.7vw;
+}

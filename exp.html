@@ -1,86 +1,88 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <script
-            src="https://code.jquery.com/jquery-3.1.1.min.js">
+    <head>
+        <title>
+            My Space - Charchit.gq
+        </title>
+        <script
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous">
         </script>
-    <script>
-        var elWrap = $(".wrap");
-var elMenu = $(".menu");
-var osMenu = elMenu.offset().top;
-var osFoot = $(".foot").offset().top - elMenu.height();
-
-$(window).scroll($.throttle(10, function() {
-
-    elMenu.css("top", 0);
-    var edge = $(window).scrollTop();
-
-    if (osMenu <= edge && osFoot > edge) {
-        elWrap.addClass("dock").removeClass("stop");
-    }
-    else {
-        elWrap.removeClass("dock stop");
-    }
-    if (osFoot <= edge) {
-        elMenu.css("top", osFoot);
-        elWrap.removeClass("dock").addClass("stop");
-    }
-
-}));
-    </script>
-<style>
-
-.section {        
-    background-image: url('images/denim-background.jpg');
-    position:relative;
-    z-index:1;
-    height:500px;
-    width:100%;
-    top:60%;
-    background-attachment:fixed;    /* this keeps the background in place */
-    background-size:100% 100%;
-    background-repeat:no-repeat;
-}
-
-.content {
-    position:relative;
-    left:30%;
-    z-index:2;
-    background-color:#fff;
-    border:2px solid #666;    
-    height:35%;    /* this height difference allows the bg to show through */   
-    width: 30%;
-}
-body { color:#000; text-align:center; font:700 60px/1 'segoe ui', sans-serif; }
-div { width:100%; }
-b { opacity:.2; }
-
-.head { height:250px; line-height:250px; background:#34495e; }
-.menu { height:100px; line-height:100px; background:#1abc9c; }
-.main { height:600px; line-height:600px; background:#ffffff; }
-.foot { height:800px; line-height:800px; background:#34495e; }
-
-/* account for "Menu" being removed from doc flow... */
-.dock .main, .stop .main { padding-top:100px; }
-/* when "Head" is out of view... */
-.dock .menu { z-index:40; position:fixed; }
-/* when "Main" is out of view... */
-.stop .menu { z-index:40; position:absolute; }
-</style>
-</head>
-<body>
-<div class="wrap">
-    <div class="head"><b>Head</b></div>
-    <div class="menu"><b>Menu</b></div>
-    <div class="main"><b>Main</b></div>
-    <div class="foot"><b>Foot</b></div>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+        <script src="js/application.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/mainPage.css"/>
+        <script>
+            $(document).ready(function(){
+                var stickySidebar = $('.c1').position().top;
+                $(window).scroll(function() {  
+                    if ($(window).scrollTop() > stickySidebar) {
+                        $('.c1').addClass('affix');
+                    }
+                    else {
+                        $('.c1').removeClass('affix');
+                    }  
+                    var back=$('.s1').position().top + 300;
+                    if ($(window).scrollTop() > back) {
+                        $('.c1').removeClass('affix');
+                    }
+                    else {
+                        $('.c1').addClass('affix');
+                    }  
+                });
+            });
+        </script>
+        <style>
+            .s1{
+                z-index=-1;
+            }
+            .c1{
+                z-index=1;
+            }
+        </style>
+    </head>
+<body ng-app="mainModule">
+<div ng-controller="mainCtrlr">
+    <div>
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav nav-pills">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Work</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div> <!--nav bar finished-->
+    <div class="content">
+        <div class="profPic">
+            <div class="s1">
+                </div>
+                <div class="c1" id="#content1">This is some content text for section three</div>
+                </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="secondCont">
+            fvd<br><br>dss
+            <hr>dsdc
+            
+        </div>
+    </div>
 </div>
-<!--<div class="section" id="s1">
-    <div class="content" id="c1">This is some content text for section one</div>
-</div>
-<div class="cont"></div>-->
 </body>
 </html>
-
-http://jsfiddle.net/Marcel/e9hyw/
-http://jsfiddle.net/MFC9B/2/

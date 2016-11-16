@@ -17,30 +17,11 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/mainPage.css"/>
-        <style>
-            
-body, html {
-    height: 100%;
-}
-.parallax {
-    /* The image used */
-    background-image: url('images/denim-background.jpg');
-
-    /* Full height */
-    height: 100%;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-        </style>
     </head>
 <body ng-app="mainModule">
-<div ng-controller="mainCtrlr">
-    <div>
-        <nav class="navbar navbar-inverse">
+<div ng-controller="mainCtrlr" class="container">
+    <div class="row">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header page-scroll">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
@@ -61,16 +42,26 @@ body, html {
             </div>
         </nav>
     </div> <!--nav bar finished-->
-    <div class="content">
-        <div class="parallax"></div>
-        
-        <div style="height:400px;background-color:red;font-size:36px">
-        Scroll Up and Down this page to see the parallax scrolling effect.
-        This div is just here to enable scrolling.
-        Tip: Try to remove the background-attachment property to remove the scrolling effect.
+    
+    <div class="row">
+        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+            <div class="row" id="header">
+                <div class="denim">
+                    <div class="dp" id="#dp1">This is some content text for section three
+                    </div>
+                </div>
+            </div> <!--header finished here-->
         </div>
-        
-        <div class="parallax"></div>
+        <div class="row" id="mainContent">
+            <blockquote>
+                What the mind of man can conceive and believe, it can achieve.
+                <cite>Napoleon Hill</cite>
+            </blockquote>
+            <br><br>
+            <div class="subHeading">Career Objective</div>
+            <div class="cont">Being an adaptable and efficient team player with good communication skills I’m looking for a role where I can develop my skills further while learning new technologies and reveling in new challenges. 
+            </div>
+        </div>
     </div>
 </div>
 </body>
