@@ -3,33 +3,35 @@ var mainModule = angular.module("mainModule", [ 'ngRoute']);
 mainModule.controller("mainCtrlr", function($scope){
    $scope.boo = (typeof $().emulateTransitionEnd == 'function');
 });
-//Scroll speed maintain
-$.fn.moveIt = function(){
-  var $window = $(window);
-  var instances = [];
-  
-  $(this).each(function(){
-    instances.push(new moveItItem($(this)));
-  });
-  
-  window.onscroll = function(){
-    var scrollTop = $window.scrollTop();
-    instances.forEach(function(inst){
-      inst.update(scrollTop);
+
+jQuery(document).ready(function($) {
+  $('#pagepiling').pagepiling({
+        menu: null,
+        direction: 'vertical',
+        verticalCentered: true,
+        sectionsColor: [],
+        anchors: [],
+        scrollingSpeed: 75,
+        easing: 'swing',
+        loopBottom: false,
+        loopTop: false,
+        css3: true,
+        navigation: {
+            'textColor': '#000',
+            'bulletsColor': '#000',
+            'position': 'right',
+            'tooltips': ['section1', 'section2', 'section3', 'section4']
+        },
+        normalScrollElements: null,
+        normalScrollElementTouchThreshold: 5,
+        touchSensitivity: 10,
+        keyboardScrolling: true,
+        sectionSelector: '.section',
+        animateAnchor: false,
+
+        //events
+        onLeave: function(index, nextIndex, direction){},
+        afterLoad: function(anchorLink, index){},
+        afterRender: function(){},
     });
-  }
-}
-
-var moveItItem = function(el){
-  this.el = $(el);
-  this.speed = parseInt(this.el.attr('data-scroll-speed'));
-};
-
-moveItItem.prototype.update = function(scrollTop){
-  var pos = scrollTop / this.speed;
-  this.el.css('transform', 'translateY(' + -pos + 'px)');
-};
-
-$(function(){
-  $('[data-scroll-speed]').moveIt();
 });

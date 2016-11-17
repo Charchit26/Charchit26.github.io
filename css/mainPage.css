@@ -26,14 +26,12 @@
   color: #fff;
   background-color: #404040;
 }
-#header{
-    height:50%;
-    width:100%;
-}
-#mainContent{
-    height:1000px;
-    width:100%;
-    margin-top:45%;
+.section{
+    height:500px;
+    width:1300px;
+    background-color: white;
+    border-style: solid;
+    color:black;
 }
 .denim{
     background-image: url("../images/denim-background.jpg");
@@ -41,32 +39,33 @@
     z-index:-1;
     height:300px;
     width:100%;
-    background-attachment:fixed;    /* this keeps the background in place */
-    background-size:100% 100%;
-    background-repeat:no-repeat;
+    /*background-attachment:fixed;    */
+    /* this keeps the background in place */
+    /*background-size:100% 100%;*/
+    /*background-repeat:no-repeat;*/
+    /*border:2px solid red;  */
+    text-align: center;
 }
-.dp{
+.dpContainer{
     position:absolute;
     z-index:0;
-    background-color:#eee;
-    border:2px solid #666;    
-    height:180%;    /* this height difference allows the bg to show through */  
-    width: 100%;
+    /*background: rgba(54, 25, 25, .5);*/
     text-align: center;
-    top:50%;
-    /*left:50%;*/
-    background-color: transparent;
+    margin-top: -10%;
+    margin-left: 38%
 }
 .pic img{
-    height: 175px;
-    width: 150px;
+    height: 190px;
+    width: 175px;
     border-style: solid;
     border-width: 5px;
-    border-radius: 50px;
+    border-radius: 75px / 75px;
+    border-color: white;
 }
 .name{
     font-size: 400%;
     font-family: serif;
+    color: #fff;
 }
 
 blockquote {
@@ -99,12 +98,20 @@ font-size: 14px;
 display: block;
 margin-top: 5px;
 }
- 
+.designation{
+    color: #fff;
+    font-size: 14px;
+    margin: 20% 0 50% 60%;
+}
 blockquote cite:before {
 content: "\2014 \2009";
 }
 
 .subHeading{
-    color: #383838;
+    color: white;
     font-size: 1.7vw;
+    background-color: grey;
+}
+.cont1{
+    height: 100%;
 }
