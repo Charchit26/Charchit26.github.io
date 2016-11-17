@@ -27,10 +27,10 @@
   background-color: #404040;
 }
 .section{
-    height:500px;
+    height:480px;
     width:1300px;
     background-color: white;
-    border-style: solid;
+    /*border-style: solid;*/
     color:black;
 }
 .denim{
@@ -39,10 +39,10 @@
     z-index:-1;
     height:300px;
     width:100%;
-    /*background-attachment:fixed;    */
+    /*background-attachment:fi:;xed;    */
     /* this keeps the background in place */
-    /*background-size:100% 100%;*/
-    /*background-repeat:no-repeat;*/
+    background-size:50% 50%;
+    background-repeat: repeat;
     /*border:2px solid red;  */
     text-align: center;
 }
@@ -110,8 +110,16 @@ content: "\2014 \2009";
 .subHeading{
     color: white;
     font-size: 1.7vw;
-    background-color: grey;
+    font-family:'Trirong', serif;
+    background-color: black;
+    top: 10%;
 }
-.cont1{
-    height: 100%;
+.cont{
+    font-family:'Trirong', serif;
+    height: 80%;
+    font-size:150%;
+    text-align:justify;
+    width:50%;
+    left:10%;
+    top:10%;
 }
