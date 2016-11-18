@@ -9,9 +9,9 @@ jQuery(document).ready(function($) {
         menu: null,
         direction: 'vertical',
         verticalCentered: true,
-        sectionsColor: [],
-        anchors: [],
-        scrollingSpeed: 75,
+        sectionsColor: ['#f2f2f2', '#7BAABE', '#ffc', '#4BBFC3', '#7BAABE', 'whitesmoke'],
+        anchors: ['top','about','skills','work','project','contact'],
+        scrollingSpeed: 200,
         easing: 'swing',
         loopBottom: false,
         loopTop: false,
@@ -20,14 +20,14 @@ jQuery(document).ready(function($) {
             'textColor': '#000',
             'bulletsColor': '#000',
             'position': 'right',
-            'tooltips': ['section1', 'section2', 'section3', 'section4']
+            'tooltips': ['Back to top', 'About Me', 'Skills', 'Work', 'Projects', 'Contact Me']
         },
         normalScrollElements: null,
         normalScrollElementTouchThreshold: 5,
         touchSensitivity: 10,
         keyboardScrolling: true,
         sectionSelector: '.section',
-        animateAnchor: false,
+        animateAnchor: true,
 
         //events
         onLeave: function(index, nextIndex, direction){},
@@ -35,3 +35,4 @@ jQuery(document).ready(function($) {
         afterRender: function(){},
     });
 });
+
