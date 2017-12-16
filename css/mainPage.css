@@ -195,7 +195,7 @@ content: "\2014 \2009";
 .contact .row.header {
   padding: 1.5em 2.5em;
   border-bottom: 1px solid #ccc;
-  background: url(http://niiiick.com/files/blur-city-1.jpg) left -80px;
+  background: url(../images/blur-city-1.jpg) left -80px;
   color: #fff;
 }
 .contact .row.body {
